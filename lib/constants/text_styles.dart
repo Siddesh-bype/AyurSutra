@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/constants/colors.dart';
@@ -30,119 +29,148 @@ class AppTextStyles {
     fontSize: 16,
   );
 
-  static final TextStyle heroTitle = GoogleFonts.notoSansDevanagari(
-    fontSize: 48,
-    fontWeight: FontWeight.bold,
-    color: AppColors.accentOrange,
-    shadows: [Shadow(blurRadius: 2, color: Colors.black12)],
-  );
-
-  static final TextStyle heroSubtitle = GoogleFonts.lato(
+  static final TextStyle footerTitle = GoogleFonts.lato(
+    color: Colors.white,
     fontSize: 16,
-    color: AppColors.textDarkGray,
-    fontStyle: FontStyle.italic,
+    fontWeight: FontWeight.bold,
   );
 
-  static final TextStyle quoteSanskrit = GoogleFonts.notoSansDevanagari(
-    fontSize: 18,
-    color: AppColors.accentOrange,
-    fontWeight: FontWeight.w600,
-  );
-
-  static final TextStyle quoteTranslation = GoogleFonts.lato(
+  static final TextStyle footerLink = GoogleFonts.lato(
+    color: Colors.white70,
     fontSize: 14,
-    color: AppColors.textDarkGray,
-    fontStyle: FontStyle.italic,
-    height: 1.4,
   );
 
-  static final TextStyle quoteExplanation = GoogleFonts.lato(
+  static final TextStyle footerText = GoogleFonts.lato(
+    color: Colors.white54,
     fontSize: 12,
-    color: AppColors.textMediumGray,
-    height: 1.3,
   );
 
   static final TextStyle discoveryTitle = GoogleFonts.playfairDisplay(
+    color: AppColors.textWhite,
     fontSize: 32,
     fontWeight: FontWeight.bold,
-    color: AppColors.textDarkGray,
   );
 
   static final TextStyle discoverySubtitle = GoogleFonts.lato(
+    color: Colors.white70,
     fontSize: 16,
-    color: AppColors.textMediumGray,
     height: 1.5,
   );
 
   static final TextStyle button = GoogleFonts.lato(
-    fontSize: 14,
-    fontWeight: FontWeight.w600,
-  );
-
-  static final TextStyle statsNumber = GoogleFonts.oswald(
-    fontSize: 24,
+    fontSize: 16,
     fontWeight: FontWeight.bold,
-    color: AppColors.textWhite,
   );
 
-  static final TextStyle statsLabel = GoogleFonts.lato(
-    fontSize: 12,
-    color: AppColors.unselectedNavItem,
+  static final TextStyle heading1 = GoogleFonts.playfairDisplay(
+    fontSize: 28,
+    fontWeight: FontWeight.bold,
+    color: AppColors.textDarkGray,
+  );
+
+  static final TextStyle subtitle = GoogleFonts.lato(
+    fontSize: 16,
+    color: Colors.grey[600],
+  );
+
+  static final TextStyle heading2 = GoogleFonts.playfairDisplay(
+    fontSize: 22,
+    fontWeight: FontWeight.bold,
+    color: AppColors.textDarkGray,
+  );
+
+  static final TextStyle heroTitle = GoogleFonts.playfairDisplay(
+    color: AppColors.textWhite,
+    fontSize: 48,
+    fontWeight: FontWeight.bold,
+    shadows: [Shadow(blurRadius: 10.0, color: Colors.black.withAlpha(128))],
+  );
+
+  static final TextStyle heroSubtitle = GoogleFonts.lato(
+    color: Colors.white,
+    fontSize: 18,
   );
 
   static final TextStyle sacredSciencesHeader = GoogleFonts.playfairDisplay(
     fontSize: 28,
     fontWeight: FontWeight.bold,
-    color: AppColors.textWhite,
+    color: AppColors.textDarkGray,
   );
 
-    static final TextStyle sacredSciencesHeader2 = GoogleFonts.playfairDisplay(
-    fontSize: 32,
-    fontWeight: FontWeight.bold,
-    color: AppColors.textWhite,
-  );
-
-  static final TextStyle sacredSciencesSubtitle = GoogleFonts.notoSansDevanagari(
-    fontSize: 16,
-    color: AppColors.accentOrange,
-  );
-
-  static final TextStyle sacredSciencesDescription = GoogleFonts.lato(
-    fontSize: 14,
-    color: AppColors.unselectedNavItem,
-    height: 1.4,
-  );
-
-  static final TextStyle therapyCardTitle = GoogleFonts.playfairDisplay(
-    fontSize: 24,
+  static final TextStyle sacredSciencesHeader2 = GoogleFonts.lato(
+    fontSize: 22,
     fontWeight: FontWeight.bold,
     color: AppColors.textDarkGray,
   );
 
-  static final TextStyle therapyCardSubtitle = GoogleFonts.lato(
+  static final TextStyle sacredSciencesSubtitle = GoogleFonts.lato(
     fontSize: 16,
-    color: AppColors.textMediumGray,
+    color: Colors.grey[600],
     fontStyle: FontStyle.italic,
   );
 
-  static final TextStyle therapyCardSanskrit = GoogleFonts.notoSansDevanagari(
-    fontSize: 14,
-    color: AppColors.accentOrange,
+  static final TextStyle sacredSciencesDescription = GoogleFonts.lato(
+    fontSize: 16,
+    color: Colors.grey[800],
+    height: 1.5,
   );
 
-  static final TextStyle therapyCardDescription = GoogleFonts.lato(
-    fontSize: 14,
+  static final TextStyle quoteSanskrit = GoogleFonts.notoSansDevanagari(
+    fontSize: 24,
     color: AppColors.textDarkGray,
-    height: 1.4,
-  );
-
-  static final TextStyle therapyCardIntensity = GoogleFonts.lato(
-    color: Colors.white,
-    fontSize: 12,
     fontWeight: FontWeight.w600,
   );
 
-  static final TextStyle bottomNavLabel = GoogleFonts.lato(
-    fontSize: 12,
+  static final TextStyle quoteTranslation = GoogleFonts.lato(
+    fontSize: 18,
+    color: AppColors.textDarkGray,
+    fontStyle: FontStyle.italic,
+  );
+
+  static final TextStyle quoteExplanation = GoogleFonts.lato(
+    fontSize: 16,
+    color: Colors.grey[700],
+    height: 1.4,
+  );
+
+  static final TextStyle statsNumber = GoogleFonts.playfairDisplay(
+    fontSize: 48,
+    fontWeight: FontWeight.bold,
+    color: AppColors.accentOrange,
+  );
+
+  static final TextStyle statsLabel = GoogleFonts.lato(
+    fontSize: 16,
+    color: AppColors.textDarkGray,
+    fontWeight: FontWeight.w600,
+  );
+
+  static final TextStyle cardTitle = GoogleFonts.lato(
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+    color: Colors.white,
+  );
+
+  static final TextStyle cardIntensity = GoogleFonts.lato(
+    fontSize: 14,
+    color: AppColors.accentOrange,
+    fontWeight: FontWeight.bold,
+  );
+
+  static final TextStyle cardSubtitle = GoogleFonts.notoSansDevanagari(
+    fontSize: 14,
+    color: Colors.white,
+    fontWeight: FontWeight.w500,
+  );
+
+  static final TextStyle cardSanskrit = GoogleFonts.notoSansDevanagari(
+    fontSize: 16,
+    color: Colors.white.withAlpha(200),
+    fontWeight: FontWeight.w500,
+  );
+
+  static final TextStyle cardDescription = GoogleFonts.lato(
+    fontSize: 14,
+    color: Colors.white.withAlpha(220),
   );
 }

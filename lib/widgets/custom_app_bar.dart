@@ -1,8 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:myapp/constants/colors.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/constants/text_styles.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({super.key});
@@ -10,50 +9,51 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      elevation: 0,
-      backgroundColor: warmWhite,
-      shape: Border(bottom: BorderSide(color: ayurvedaLight.withOpacity(0.5), width: 1)),
+      backgroundColor: AppColors.darkSectionBackground,
+      elevation: 4,
+      leading: Builder(
+        builder: (context) => IconButton(
+          icon: const Icon(Icons.menu, color: AppColors.accentOrange),
+          onPressed: () => Scaffold.of(context).openDrawer(),
+        ),
+      ),
       title: Row(
         children: [
-          SvgPicture.asset(
-            'assets/images/logo.svg',
-            height: 40,
-            colorFilter: const ColorFilter.mode(ayurvedaPrimary, BlendMode.srcIn),
-          ),
+          Text("AyurSutra", style: AppTextStyles.appBarTitle),
           const SizedBox(width: 8),
-          RichText(
-            text: TextSpan(
-              style: GoogleFonts.playfairDisplay(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-                color: ayurvedaPrimary,
-              ),
-              children: <TextSpan>[
-                const TextSpan(text: 'AyurSutra'),
-                TextSpan(
-                  text: ' आयुरसूत्र',
-                  style: GoogleFonts.notoSansDevanagari(
-                    fontSize: 22,
-                    fontWeight: FontWeight.w500,
-                     color: ayurvedaSecondary,
-                  ),
-                ),
-              ],
-            ),
-          ),
+          Text("आयुर्सूत्र", style: AppTextStyles.appBarSubtitle),
         ],
       ),
       actions: [
-        IconButton(
-          icon: const Icon(Icons.notifications_outlined, color: ayurvedaAccent, size: 28),
-          onPressed: () {
-            // Handle notification icon tap
-          },
+        Stack(
+          children: [
+            IconButton(
+              icon: const Icon(Icons.notifications_outlined, color: Colors.white),
+              onPressed: () {},
+            ),
+            Positioned(
+              right: 8,
+              top: 8,
+              child: Container(
+                padding: const EdgeInsets.all(2),
+                decoration: BoxDecoration(
+                  color: AppColors.errorColor,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                constraints: const BoxConstraints(minWidth: 16, minHeight: 16),
+                child: const Text('3', style: TextStyle(color: Colors.white, fontSize: 10)),
+              ),
+            )
+          ],
         ),
+        IconButton(
+          icon: const Icon(Icons.person_outline, color: Colors.white),
+          onPressed: () {},
+        )
       ],
     );
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(60);
 }

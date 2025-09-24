@@ -1,0 +1,48 @@
+
+[
+  {
+    "title": "Vamana",
+    "subtitle": "Emetic Therapy",
+    "sanskrit": "प्राणायाम स्वच्छता कफदोषनाशनम्",
+    "description": "Therapeutic vomiting to eliminate Kapha dosha and toxins from the upper body through systematic purification.",
+    "intensity": "Intensive",
+    "accentColor": "0xFF2196F3",
+    "gradientColors": ["0xFFE3F2FD", "0xFFFFFFFF"]
+  },
+  {
+    "title": "Virechana",
+    "subtitle": "Purgation Therapy",
+    "sanskrit": "पित्त दोष निहारण विशुद्ध कर्म",
+    "description": "Therapeutic purgation to eliminate Pitta dosha and purify the liver, gallbladder, and digestive system.",
+    "intensity": "Moderate",
+    "accentColor": "0xFFFF9800",
+    "gradientColors": ["0xFFFFF3E0", "0xFFFFFFFF"]
+  },
+  {
+    "title": "Basti",
+    "subtitle": "Enema Therapy",
+    "sanskrit": "वात दोष शमन चिकित्सा",
+    "description": "The king of Panchakarma therapies for Vata elimination through medicated enemas, treating neurological disorders.",
+    "intensity": "Comprehensive",
+    "accentColor": "0xFF9C27B0",
+    "gradientColors": ["0xFFF3E5F5", "0xFFFFFFFF"]
+  },
+  {
+    "title": "Nasya",
+    "subtitle": "Nasal Administration",
+    "sanskrit": "शिरोविरेचनं नास्यं",
+    "description": "Administering medicated oils through the nasal passages to cleanse and rejuvenate the head and neck region.",
+    "intensity": "Mild",
+    "accentColor": "0xFF4CAF50",
+    "gradientColors": ["0xFFE8F5E9", "0xFFFFFFFF"]
+  },
+  {
+    "title": "Raktamokshana",
+    "subtitle": "Bloodletting Therapy",
+    "sanskrit": "रक्तमोक्षणं व्याधिहरणं",
+    "description": "A traditional Ayurvedic method of blood purification, used to treat skin diseases, allergies, and infections.",
+    "intensity": "Specialized",
+    "accentColor": "0xFFE53935",
+    "gradientColors": ["0xFFFFEBEE", "0xFFFFFFFF"]
+  }
+]

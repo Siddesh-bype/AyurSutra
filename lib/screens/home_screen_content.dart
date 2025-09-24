@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart' hide SearchBar;
 import 'package:myapp/constants/text_styles.dart';
 import 'package:myapp/widgets/therapies_carousel.dart';
@@ -18,26 +17,26 @@ class HomeScreenContent extends StatelessWidget {
           children: [
             Text(
               'Welcome to AyurSutra',
-              style: heading1.copyWith(fontSize: 36),
+              style: AppTextStyles.heading1.copyWith(fontSize: 36),
             ),
             const SizedBox(height: 8),
             Text(
               'Discover the ancient science of healing.',
-              style: subtitle.copyWith(fontSize: 20),
+              style: AppTextStyles.subtitle.copyWith(fontSize: 20),
             ),
             const SizedBox(height: 32),
-            const SearchBar(),
+            const CustomSearchBar(),
             const SizedBox(height: 32),
             Text(
               'Popular Therapies',
-              style: heading2,
+              style: AppTextStyles.heading2,
             ),
             const SizedBox(height: 16),
             const TherapiesCarousel(),
             const SizedBox(height: 32),
             Text(
               'Featured Products',
-              style: heading2,
+              style: AppTextStyles.heading2,
             ),
             const SizedBox(height: 16),
             const FeaturedProducts(),

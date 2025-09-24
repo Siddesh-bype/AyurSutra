@@ -1,47 +1,51 @@
-
 # AyurSutra App Blueprint
 
 ## Overview
 
-This document outlines the design, features, and implementation plan for the AyurSutra Flutter application. The app aims to provide a modern and intuitive mobile experience for users interested in Ayurveda, with a focus on Panchakarma therapies.
+AyurSutra is a Flutter application designed to bring ancient Ayurvedic wisdom to a modern audience. The app provides information about Ayurvedic therapies, helps users find wellness centers, and offers a personalized experience through a clean and intuitive interface.
 
 ## Style and Design
 
-The application will adhere to the following design principles:
+The app follows a modern, clean, and visually appealing design language.
 
-*   **Mobile-First Design:** The layout is optimized for mobile screen dimensions (375px - 428px width), with a responsive and adaptive UI.
-*   **Color Palette:**
-    *   **Primary Background:** Soft gradient from cream (`#F5F1E8`) to mint (`#E8F5F0`).
-    *   **Dark Sections:** Deep charcoal (`#2A2A2A`).
-    *   **Accent Orange:** Saffron orange (`#FF8C42`).
-    *   **Card Background:** White with 90% opacity and soft shadows.
-    *   **Text:** Dark gray (`#2C3E50`), Medium gray (`#7F8C8D`), White (`#FFFFFF`).
-*   **Typography:**
-    *   **Primary Font:** 'Playfair Display' for headings and titles.
-    *   **Secondary Font:** 'Noto Sans Devanagari' for Sanskrit text.
-    *   **Body Font:** A clean and readable sans-serif font.
-*   **Iconography:** Material Design icons with a consistent style.
+*   **Colors**: The color palette is inspired by nature and Ayurvedic traditions.
+    *   `primaryGradient`: A soothing gradient from `scaffoldPrimary` to `primaryBackgroundEnd`.
+    *   `accentOrange`: A vibrant orange used for buttons and highlights.
+    *   `iconYellow`, `iconPink`, `iconGreen`, `iconBlue`: Colors for decorative icons.
+    *   `textDarkGray`, `textLightGray`: For primary and secondary text.
+    *   `darkSectionBackground`: A dark background for contrast.
+*   **Typography**: The app uses the Poppins font for a clean and modern look.
+    *   `heroTitle`: Large and bold for the main headline.
+    *   `heroSubtitle`: A smaller, lighter subtitle.
+    *   `cardTitle`, `cardSanskrit`, `cardDescription`: Styles for therapy cards.
+    *   `drawerHeaderTitle`, `drawerHeaderSubtitle`, `drawerItem`: Styles for the navigation drawer.
+*   **Iconography**: The app uses Material Design icons to enhance usability and visual appeal.
 
-## Implemented Features
+## Features
 
-*   **Custom App Bar:** A dark-themed app bar with the app's logo, title in English and Hindi, and action buttons for notifications and user profile.
-*   **Navigation Drawer:** A side-menu for navigating to different sections of the app.
-*   **Hero Section:** A visually appealing hero section with a gradient background, decorative elements, and the app's tagline.
-*   **Quote Card:** A card component to display inspirational quotes related to Ayurveda.
-*   **Discovery Section:** A section to encourage users to explore the app's content.
-*   **Statistics Section:** A section to display key statistics about Ayurveda and Panchakarma.
-*   **Therapy Cards:** A vertically scrolling list of cards, each providing detailed information about a specific Panchakarma therapy.
-*   **Bottom Navigation Bar:** An optional bottom navigation bar for quick access to the main screens.
+### Implemented Features
+
+*   **Home Screen**: A comprehensive home screen with multiple sections:
+    *   **Custom App Bar**: A custom app bar with a search bar and a drawer menu.
+    *   **Hero Section**: An inspiring hero section with a call-to-action button.
+    *   **Quote Card**: A card displaying an inspirational Ayurvedic quote.
+    *   **Discovery Section**: A section to encourage users to explore therapies.
+    *   **Statistics Section**: Displays key statistics about the platform.
+    *   **Sacred Sciences Header**: Introduces the therapy section.
+    *   **Therapies List**: A list of Ayurvedic therapies with details.
+    *   **Next Screen**: A call-to-action to book a consultation.
+    *   **Footer**: A footer with links and social media icons.
+*   **Navigation**:
+    *   **Bottom Navigation Bar**: For easy switching between the main sections of the app.
+    *   **Navigation Drawer**: Provides access to additional sections and user-specific options.
+*   **Data Handling**:
+    *   **Therapy Service**: A service to load therapy data from a JSON file.
+    *   **Therapy Model**: A data model to represent Ayurvedic therapies.
 
 ## Current Plan
 
-The current plan is to implement the new design provided in the `GEMINI.md` file.
-
-**Steps:**
-
-1.  **Update `pubspec.yaml`:** Ensure the `google_fonts` package is included.
-2.  **Update `lib/constants/colors.dart` and `lib/constants/text_styles.dart`:** Define the new color palette and text styles.
-3.  **Update `lib/main.dart`:** Implement the main app structure with the new theme and layout.
-4.  **Update `lib/screens/home_screen.dart`:** Build the home screen using the new UI components.
-5.  **Refactor widgets:** Create reusable widgets for the different UI components (e.g., `QuoteCard`, `TherapyCard`).
-6.  **Review and refine:** Ensure the final implementation matches the design guide and is responsive and accessible.
+*   **`lib/widgets/therapy_card.dart`**: Corrected the code to use the correct property names, `title` and `sanskrit`.
+*   **`lib/widgets/therapies_list.dart`**: Corrected the code to use the correct property names, `title` and `sanskrit`.
+*   **`lib/widgets/therapies_carousel.dart`**: Corrected the method name from `loadTherapies` to `getTherapies`.
+*   **`lib/widgets/therapies_list.dart`**: Corrected the method name from `loadTherapies` to `getTherapies`.
+*   **`lib/models/product.dart`**: Added `const` to the `Product` constructor to fix a `const` constructor invocation error.
