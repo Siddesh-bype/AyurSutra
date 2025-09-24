@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart' hide SearchBar;
-import 'package:myapp/constants/colors.dart';
+import 'package:myapp/constants/text_styles.dart';
 import 'package:myapp/widgets/therapies_carousel.dart';
 import 'package:myapp/widgets/search_bar.dart';
 import 'package:myapp/widgets/featured_products.dart';
@@ -11,55 +11,38 @@ class HomeScreenContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox(height: 20),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.0),
-            child: Text(
-              'Find a Therapy',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                color: textGray,
-              ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 24.0, horizontal: 16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Welcome to AyurSutra',
+              style: heading1.copyWith(fontSize: 36),
             ),
-          ),
-          const SizedBox(height: 10),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.0),
-            child: SearchBar(),
-          ),
-          const SizedBox(height: 20),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.0),
-            child: Text(
+            const SizedBox(height: 8),
+            Text(
+              'Discover the ancient science of healing.',
+              style: subtitle.copyWith(fontSize: 20),
+            ),
+            const SizedBox(height: 32),
+            const SearchBar(),
+            const SizedBox(height: 32),
+            Text(
               'Popular Therapies',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: textGray,
-              ),
+              style: heading2,
             ),
-          ),
-          const SizedBox(height: 10),
-          const TherapiesCarousel(),
-          const SizedBox(height: 20),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.0),
-            child: Text(
+            const SizedBox(height: 16),
+            const TherapiesCarousel(),
+            const SizedBox(height: 32),
+            Text(
               'Featured Products',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: textGray,
-              ),
+              style: heading2,
             ),
-          ),
-          const SizedBox(height: 10),
-          const FeaturedProducts(),
-        ],
+            const SizedBox(height: 16),
+            const FeaturedProducts(),
+          ],
+        ),
       ),
     );
   }

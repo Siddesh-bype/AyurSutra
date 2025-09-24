@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/screens/home_screen.dart';
 import 'package:myapp/constants/colors.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/constants/text_styles.dart';
 
 class AyurSutraApp extends StatelessWidget {
   const AyurSutraApp({super.key});
@@ -12,44 +12,54 @@ class AyurSutraApp extends StatelessWidget {
     return MaterialApp(
       title: 'AyurSutra',
       theme: ThemeData(
-        primaryColor: primaryOrange,
-        scaffoldBackgroundColor: backgroundCream,
+        useMaterial3: true,
+        primaryColor: ayurvedaPrimary,
+        scaffoldBackgroundColor: warmWhite,
         colorScheme: const ColorScheme.light().copyWith(
-          primary: primaryOrange,
-          secondary: accentGreen,
+          primary: ayurvedaPrimary,
+          secondary: ayurvedaSecondary,
+          tertiary: ayurvedaAccent,
+          surface: cream,
+          onPrimary: Colors.white,
+          onSecondary: Colors.white,
+          onSurface: darkBrown,
+          error: raktamokshanaRuby,
         ),
-        textTheme: GoogleFonts.latoTextTheme(
-          Theme.of(context).textTheme,
-        ).copyWith(
-          displayLarge: const TextStyle(
-            fontSize: 32,
-            fontWeight: FontWeight.bold,
-            color: textGray,
-          ),
-          titleLarge: const TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: textGray,
-          ),
-          bodyMedium: const TextStyle(
-            fontSize: 16,
-            color: textGray,
-          ),
+        textTheme: TextTheme(
+          displayLarge: heading1,
+          headlineMedium: heading2,
+          titleMedium: subtitle,
+          bodyMedium: bodyText1,
+          bodySmall: bodyText2,
+          labelLarge: buttonText,
         ),
-        appBarTheme: const AppBarTheme(
-          backgroundColor: backgroundCream,
+        appBarTheme: AppBarTheme(
+          backgroundColor: warmWhite,
+          foregroundColor: darkBrown,
           elevation: 0,
-          iconTheme: IconThemeData(color: textGray),
+          titleTextStyle: subtitle.copyWith(color: darkBrown),
+          iconTheme: const IconThemeData(color: darkBrown),
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            backgroundColor: primaryOrange,
+            backgroundColor: ayurvedaPrimary,
+            foregroundColor: Colors.white,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10.0),
+              borderRadius: BorderRadius.circular(50.0),
             ),
-            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+            textStyle: buttonText,
           ),
         ),
+        cardTheme: CardThemeData(
+          color: Colors.white,
+          elevation: 0,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16.0),
+             side: BorderSide(color: ayurvedaLight.withOpacity(0.5)),
+          ),
+          shadowColor: ayurvedaPrimary.withOpacity(0.1),
+        )
       ),
       home: const HomeScreen(),
     );

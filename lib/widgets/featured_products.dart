@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/models/product.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:myapp/constants/text_styles.dart';
+import 'package:myapp/constants/colors.dart';
 
 class FeaturedProducts extends StatelessWidget {
   const FeaturedProducts({super.key});
@@ -10,25 +12,21 @@ class FeaturedProducts extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<Product> products = [
       Product(
-        name: 'Ashwagandha',
-        image: 'https://picsum.photos/seed/ashwagandha/200/200',
-        price: 15.99,
-      ),
+          name: 'Ashwagandha',
+          image: 'https://images.unsplash.com/photo-1593035345284-6334d61397b9?q=80&w=2070&auto=format&fit=crop',
+          price: 15.99),
       Product(
-        name: 'Triphala',
-        image: 'https://picsum.photos/seed/triphala/200/200',
-        price: 12.50,
-      ),
+          name: 'Triphala',
+          image: 'https://images.unsplash.com/photo-1579847128218-e738a50c3a81?q=80&w=2070&auto=format&fit=crop',
+          price: 12.50),
       Product(
-        name: 'Brahmi',
-        image: 'https://picsum.photos/seed/brahmi/200/200',
-        price: 18.00,
-      ),
+          name: 'Brahmi',
+          image: 'https://images.unsplash.com/photo-1628102206402-3f4314644a03?q=80&w=2070&auto=format&fit=crop',
+          price: 18.00),
       Product(
-        name: 'Turmeric',
-        image: 'https://picsum.photos/seed/turmeric/200/200',
-        price: 9.99,
-      ),
+          name: 'Turmeric',
+          image: 'https://images.unsplash.com/photo-1596701062351-8c2c14d1fdd0?q=80&w=2070&auto=format&fit=crop',
+          price: 9.99),
     ];
 
     return GridView.builder(
@@ -36,57 +34,76 @@ class FeaturedProducts extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        childAspectRatio: 0.8,
-        crossAxisSpacing: 10,
-        mainAxisSpacing: 10,
+        childAspectRatio: 0.7,
+        crossAxisSpacing: 16,
+        mainAxisSpacing: 16,
       ),
       itemCount: products.length,
       itemBuilder: (context, index) {
         final product = products[index];
-        return Card(
-          elevation: 2,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.0),
+        return Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(16.0),
+            boxShadow: [
+              BoxShadow(
+                color: ayurvedaPrimary.withOpacity(0.08),
+                blurRadius: 15,
+                offset: const Offset(0, 5),
+              ),
+            ],
           ),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              ClipRRect(
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(10.0),
-                  topRight: Radius.circular(10.0),
-                ),
-                child: CachedNetworkImage(
-                  imageUrl: product.image,
-                  height: 120,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
-                  placeholder: (context, url) => const Center(
-                    child: CircularProgressIndicator(),
+              Expanded(
+                flex: 5,
+                child: ClipRRect(
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(16.0),
+                    topRight: Radius.circular(16.0),
                   ),
-                  errorWidget: (context, url, error) => const Icon(Icons.error),
+                  child: CachedNetworkImage(
+                    imageUrl: product.image,
+                    fit: BoxFit.cover,
+                    placeholder: (context, url) => const Center(
+                      child: CircularProgressIndicator(color: ayurvedaPrimary),
+                    ),
+                    errorWidget: (context, url, error) =>
+                        const Icon(Icons.error, color: raktamokshanaRuby),
+                  ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      product.name,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
+              Expanded(
+                flex: 4,
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(product.name, style: subtitle),
+                      Text(
+                        '\$${product.price.toStringAsFixed(2)}',
+                        style: bodyText1.copyWith(
+                          color: ayurvedaPrimary,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 4.0),
-                    Text(
-                      '\$${product.price.toStringAsFixed(2)}',
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
+                      ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 16,
+                                  vertical: 8
+                              ),
+                              textStyle: buttonText.copyWith(
+                                  fontSize: 12
+                              )
+                          ),
+                          child: const Text('Add to Cart'))
+                    ],
+                  ),
                 ),
               ),
             ],
