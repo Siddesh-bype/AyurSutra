@@ -1,41 +1,47 @@
-# AyurSutra - Blueprint
+
+# AyurSutra App Blueprint
 
 ## Overview
 
-AyurSutra is a Flutter application designed to provide a serene and intuitive user experience for exploring the world of Ayurveda. The app will feature a beautiful and calming design, with a focus on readability and ease of use. It will incorporate a custom theme, elegant typography, and a refined component style to create a consistent and immersive user experience.
+This document outlines the design, features, and implementation plan for the AyurSutra Flutter application. The app aims to provide a modern and intuitive mobile experience for users interested in Ayurveda, with a focus on Panchakarma therapies.
 
-## Style, Design, and Features
+## Style and Design
 
-### Theme
+The application will adhere to the following design principles:
 
-- **Color Palette**: The app will use a sophisticated color palette inspired by the provided images, with a focus on earthy tones, muted colors, and a few vibrant accents. The light theme will feature a soft, off-white background, while the dark theme will use a deep, calming charcoal color.
+*   **Mobile-First Design:** The layout is optimized for mobile screen dimensions (375px - 428px width), with a responsive and adaptive UI.
+*   **Color Palette:**
+    *   **Primary Background:** Soft gradient from cream (`#F5F1E8`) to mint (`#E8F5F0`).
+    *   **Dark Sections:** Deep charcoal (`#2A2A2A`).
+    *   **Accent Orange:** Saffron orange (`#FF8C42`).
+    *   **Card Background:** White with 90% opacity and soft shadows.
+    *   **Text:** Dark gray (`#2C3E50`), Medium gray (`#7F8C8D`), White (`#FFFFFF`).
+*   **Typography:**
+    *   **Primary Font:** 'Playfair Display' for headings and titles.
+    *   **Secondary Font:** 'Noto Sans Devanagari' for Sanskrit text.
+    *   **Body Font:** A clean and readable sans-serif font.
+*   **Iconography:** Material Design icons with a consistent style.
 
-- **Typography**: The app will use the Google Fonts package to implement a custom font that is both elegant and easy to read. The typography will be designed to create a clear visual hierarchy, with different font sizes and weights for headings, subheadings, and body text.
+## Implemented Features
 
-- **Component Styles**: The app will feature custom styles for all of the main UI components, including the app bar, buttons, and cards. These styles will be designed to be consistent with the overall aesthetic of the app, and to create a seamless user experience.
+*   **Custom App Bar:** A dark-themed app bar with the app's logo, title in English and Hindi, and action buttons for notifications and user profile.
+*   **Navigation Drawer:** A side-menu for navigating to different sections of the app.
+*   **Hero Section:** A visually appealing hero section with a gradient background, decorative elements, and the app's tagline.
+*   **Quote Card:** A card component to display inspirational quotes related to Ayurveda.
+*   **Discovery Section:** A section to encourage users to explore the app's content.
+*   **Statistics Section:** A section to display key statistics about Ayurveda and Panchakarma.
+*   **Therapy Cards:** A vertically scrolling list of cards, each providing detailed information about a specific Panchakarma therapy.
+*   **Bottom Navigation Bar:** An optional bottom navigation bar for quick access to the main screens.
 
-### Light Theme
+## Current Plan
 
-- **Primary Color**: #8B4513 (SaddleBrown)
-- **Secondary Color**: #FFFAF0 (FloralWhite)
-- **Accent Color**: #556B2F (DarkOliveGreen)
-- **Background Color**: #FFFAF0 (FloralWhite)
-- **Text Color**: #000000 (Black)
+The current plan is to implement the new design provided in the `GEMINI.md` file.
 
-### Dark Theme
+**Steps:**
 
-- **Primary Color**: #A0522D (Sienna)
-- **Secondary Color**: #1C1C1C (Charcoal)
-- **Accent Color**: #9ACD32 (YellowGreen)
-- **Background Color**: #1C1C1C (Charcoal)
-- **Text Color**: #FFFFFF (White)
-
-## Plan and Steps
-
-1.  **Update `pubspec.yaml`**: Add the `google_fonts` package to the `pubspec.yaml` file to enable the use of custom fonts.
-
-2.  **Update `android/app/src/main/res/values/styles.xml`**: Modify the `styles.xml` file to ensure that the background color of the Android window matches the new theme.
-
-3.  **Update `lib/main.dart`**: Replace the existing `MyApp` widget with a new `AyurSutraApp` widget that implements the new theme and design.
-
-4.  **Run the app**: Run the app on an emulator to verify that the new theme and design have been applied correctly.
+1.  **Update `pubspec.yaml`:** Ensure the `google_fonts` package is included.
+2.  **Update `lib/constants/colors.dart` and `lib/constants/text_styles.dart`:** Define the new color palette and text styles.
+3.  **Update `lib/main.dart`:** Implement the main app structure with the new theme and layout.
+4.  **Update `lib/screens/home_screen.dart`:** Build the home screen using the new UI components.
+5.  **Refactor widgets:** Create reusable widgets for the different UI components (e.g., `QuoteCard`, `TherapyCard`).
+6.  **Review and refine:** Ensure the final implementation matches the design guide and is responsive and accessible.
